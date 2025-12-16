@@ -51,7 +51,7 @@ export default function Products() {
       name: "Lavender Bath Soak",
       description: "Soothing herbal bath blend with organic lavender and essential oils",
       price: 169,
-      image: "/lavender-bath-soak.jpg",
+      image: "https://thelittlegoatsoapcompany.co.uk/wp-content/uploads/2022/09/PhotoRoom_20210427_204647-e1644263488741.jpg",
     },
     {
       id: "8",
