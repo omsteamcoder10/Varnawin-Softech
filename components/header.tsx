@@ -37,7 +37,7 @@ export default function Header() {
           {/* LOGO */}
          <Link href="/" className="flex items-center gap-3">
   <img
-    src="/logo/logos.webp"
+    src="/logo/logoes.webp"
     alt="Logo"
     className="h-15 w-auto object-contain"
   />

@@ -11,6 +11,11 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
+             <img
+    src="/logo/logoes.webp"
+    alt="Logo"
+    className="h-15 w-auto object-contain"
+  />
             <h3 className="text-xl font-bold mb-4">Darshana Natural Care</h3>
             <p className="text-sm opacity-90">
               Pure. Herbal. Ayurvedic. Experience nature’s true healing and beauty.
