@@ -1,33 +1,48 @@
-import { ShoppingCart } from "lucide-react"
+import Image from "next/image";
 
-interface ProductCardProps {
-  id: string
-  name: string
-  description: string
-  price: number
-  image: string
-}
+type ProductCardProps = {
+  name: string;
+  description: string;
+  image: string;
+};
 
-export default function ProductCard({ id, name, description, price, image }: ProductCardProps) {
+export default function ProductCard({
+  name,
+  description,
+  image,
+}: ProductCardProps) {
   return (
-    <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-border">
-      <div className="relative h-48 sm:h-56 bg-secondary bg-opacity-20 overflow-hidden">
-        <img
-          src={image || "/placeholder.svg"}
+    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all flex flex-col">
+
+      {/* Course Image */}
+      <div className="relative w-full h-48 mb-4 rounded-xl overflow-hidden">
+        <Image
+          src={image}
           alt={name}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          fill
+          className="object-cover"
         />
       </div>
-      <div className="p-4 sm:p-6">
-        <h3 className="text-lg font-semibold text-foreground mb-2">{name}</h3>
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{description}</p>
-        <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-primary">${price.toFixed(2)}</span>
-          <button className="bg-accent text-accent-foreground p-2 rounded-full hover:shadow-lg transition-all hover:scale-110">
-            <ShoppingCart size={20} />
-          </button>
-        </div>
-      </div>
+
+      {/* Course Title */}
+      <h3 className="text-xl font-semibold mb-2 text-[#2f3e6f]">
+        {name}
+      </h3>
+
+      {/* Course Description */}
+      <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
+        {description}
+      </p>
+
+      {/* CTA */}
+      <button
+        type="button"
+        className="mt-auto inline-flex justify-center items-center px-6 py-2.5 rounded-full
+        bg-[#6B7FB3] text-white font-medium transition hover:opacity-90"
+      >
+        View Details
+      </button>
+
     </div>
-  )
+  );
 }
