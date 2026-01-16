@@ -1,33 +1,34 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"] })
-const geistMono = Geist_Mono({ subsets: ["latin"] })
+const geist = Geist({ subsets: ["latin"] });
+const geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Natura Beauty | Natural Ayurvedic Beauty Products",
+  title: "Varnawin Softech ",
   description:
-    "Pure, natural, and organic Ayurvedic beauty products including herbal hair oils, face packs, and skincare creams.",
+    "Varnawin Softech is a leading IT training and corporate learning institute offering Full Stack Development, Data Science, Cloud Computing, AI, Cyber Security, and professional skill development programs.",
   icons: {
-    icon: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/logo/2.webp",
+    apple: "/logo/2.webp",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
+      <body
+        className={`${geist.className} ${geistMono.className} antialiased`}
+      >
         {children}
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
