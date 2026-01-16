@@ -1,44 +1,22 @@
-"use client";
+// components/ProductCard.tsx
+import Link from 'next/link';
 
-import Link from "next/link";
-
-export default function ProductCard({ id, name, description, price, image }) {
-
-  const formatINR = (amount: number) => {
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      maximumFractionDigits: 0,
-    }).format(amount);
-  };
-
+export default function ProductCard({ id, name, description, image }) {
   return (
-    <Link href={`/products/${id}`}>
-      <div className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition-all cursor-pointer">
-
-        {/* Image */}
-        <img 
-          src={image}
-          alt={name}
-          className="w-full h-48 object-cover rounded-lg mb-4"
-        />
-
-        {/* Name */}
-        <h3 className="text-lg font-semibold mb-1 text-[#404C2F]">
-          {name}
-        </h3>
-
-        {/* Description */}
-        <p className="text-[#404C2F]/70 mb-3 text-sm">
-          {description}
-        </p>
-
-        {/* Price */}
-        <p className="text-xl font-bold text-[#404C2F]">
-          {formatINR(price)}
-        </p>
-
+    <div className="border rounded-lg overflow-hidden shadow-sm">
+      <img src={image} alt={name} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="font-bold text-xl mb-2">{name}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        
+        {/* Update this Link */}
+        <Link 
+          href={`/products/${id}`} 
+          className="inline-block bg-[#5F73A7] text-white px-4 py-2 rounded hover:bg-[#2f3e6f]"
+        >
+          View Details
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }

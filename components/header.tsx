@@ -46,7 +46,7 @@ export default function Header() {
             <img
   src="/logo/1.webp"
   alt="Varnawin Softech Logo"
-  className="h-50 w-50 mt-6 object-contain transition-transform group-hover:scale-105"
+  className="h-40 w-50 mt-6 object-contain transition-transform group-hover:scale-105"
 />
 
 

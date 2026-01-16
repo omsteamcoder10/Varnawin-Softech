@@ -24,9 +24,9 @@ export default function Footer() {
     src="/logo/1.webp"
     alt="Varnawin Softech Logo"
     className="
-      h-28 w-40
+      h-38 w-40
       sm:h-32 sm:w-44
-      md:h-16 md:w-48
+      md:h-46 md:w-48
       object-contain
       transition-transform
       group-hover:scale-105
