@@ -49,7 +49,7 @@ export default function Header() {
             <img
               src="/logo/1.webp"
               alt="Mirror Homes Logo"
-              className="h-10 md:h-12 object-contain"
+              className="h-30 md:h-43 object-contain"
             />
           </Link>
 
