@@ -4,20 +4,23 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Courses", href: "/courses" },
+  { label: "Services", href: "/services" },
+];
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Close menu when clicking a link
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Get the height of the Hero section
       const hero = document.getElementById("hero-section");
       const heroHeight = hero ? hero.offsetHeight : 0;
-
-      // Only show background after scrolling past Hero
       setScrolled(window.scrollY > heroHeight);
     };
 
@@ -26,86 +29,89 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    // Lock scroll on mobile when menu is open
-    if (isOpen && window.innerWidth < 768) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow =
+      isOpen && window.innerWidth < 768 ? "hidden" : "auto";
   }, [isOpen]);
 
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#5F73A7]/95 backdrop-blur-sm shadow-lg py-2" : "bg-transparent py-4"
+        scrolled
+          ? "bg-[#5F73A7]/95 backdrop-blur-sm shadow-lg py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-3 group" onClick={closeMenu}>
+          <Link href="/" onClick={closeMenu} className="flex items-center">
             <img
               src="/logo/1.webp"
-              alt="Varnawin Softech Logo"
-              className="h-40 w-50 mt-6 object-contain transition-transform group-hover:scale-105"
+              alt="Mirror Homes Logo"
+              className="h-10 md:h-12 object-contain"
             />
           </Link>
 
-          {/* DESKTOP NAVIGATION */}
+          {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-8">
-            {["Home", "About", "Courses", "Services"].map((item) => (
+            {navLinks.map((link) => (
               <Link
-                key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                key={link.href}
+                href={link.href}
                 className="text-white/90 hover:text-white transition-colors font-bold text-lg"
               >
-                {item}
+                {link.label}
               </Link>
             ))}
+
             <Link
               href="/contact"
-              className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-all shadow-md hover:shadow-blue-500/20 font-bold text-lg"
+              className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-all shadow-md font-bold text-lg"
             >
               Contact
             </Link>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE TOGGLE */}
           <button
-            className="md:hidden p-2 rounded-md hover:bg-white/10 transition-colors"
+            className="md:hidden p-2 rounded-md hover:bg-white/10"
             onClick={() => setIsOpen(!isOpen)}
-            aria-expanded={isOpen}
-            aria-label="Toggle Menu"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={32} className="text-white" /> : <Menu size={32} className="text-white" />}
+            {isOpen ? (
+              <X size={32} className="text-white" />
+            ) : (
+              <Menu size={32} className="text-white" />
+            )}
           </button>
         </div>
 
-        {/* MOBILE NAVIGATION MENU */}
+        {/* MOBILE MENU */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
             isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="bg-blue-950/95 backdrop-blur-md rounded-2xl p-6 space-y-3 border border-white/10 shadow-xl">
-            {["Home", "About Us", "Courses", "Services"].map((item) => (
+          <div className="bg-blue-950/95 backdrop-blur-md rounded-2xl p-6 space-y-3 shadow-xl">
+            {navLinks.map((link) => (
               <Link
-                key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
-                className="block text-white/90 px-4 py-4 hover:bg-white/10 rounded-xl transition-colors font-bold text-xl"
+                key={link.href}
+                href={link.href}
                 onClick={closeMenu}
+                className="block text-white px-4 py-4 hover:bg-white/10 rounded-xl font-bold text-xl"
               >
-                {item}
+                {link.label}
               </Link>
             ))}
-            <hr className="border-white/10 my-4" />
-            <a
-              href="mailto:training@varnawinsoftech.com"
+
+            <Link
+              href="/contact"
+              onClick={closeMenu}
               className="block bg-blue-600 text-white px-4 py-4 rounded-xl text-center font-bold text-xl"
             >
-              Email Us
-            </a>
+              Contact
+            </Link>
           </div>
         </div>
       </nav>
