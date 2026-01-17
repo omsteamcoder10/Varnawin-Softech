@@ -12,13 +12,21 @@ export default function Header() {
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      // Get the height of the Hero section
+      const hero = document.getElementById("hero-section");
+      const heroHeight = hero ? hero.offsetHeight : 0;
+
+      // Only show background after scrolling past Hero
+      setScrolled(window.scrollY > heroHeight);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    // Only lock scroll on mobile screens to prevent layout shift on desktop
+    // Lock scroll on mobile when menu is open
     if (isOpen && window.innerWidth < 768) {
       document.body.style.overflow = "hidden";
     } else {
@@ -27,45 +35,29 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-   <header
-  className={`
-    fixed top-0 left-0 w-full z-50 transition-all duration-300
-    ${
-      scrolled
-        ? "bg-[#5F73A7]/95 backdrop-blur-sm shadow-lg py-2"
-        : "bg-transparent py-4"
-    }
-  `}
->
-
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-[#5F73A7]/95 backdrop-blur-sm shadow-lg py-2" : "bg-transparent py-4"
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
+
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-3 group" onClick={closeMenu}>
             <img
-  src="/logo/1.webp"
-  alt="Varnawin Softech Logo"
-  className="h-40 w-50 mt-6 object-contain transition-transform group-hover:scale-105"
-/>
-
-
-            {/* <div className="leading-tight"> */}
-              {/* <p className="text-white font-black text-lg sm:text-xl tracking-tight">
-                Varnawin Softech
-              </p> */}
-              {/* <p className="text-blue-200 text-xs font-bold uppercase tracking-widest">
-                Learn, Lead, Success
-              </p> */}
-            {/* </div> */}
+              src="/logo/1.webp"
+              alt="Varnawin Softech Logo"
+              className="h-40 w-50 mt-6 object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* DESKTOP NAVIGATION */}
           <div className="hidden md:flex items-center gap-8">
             {["Home", "About", "Courses", "Services"].map((item) => (
-              <Link 
+              <Link
                 key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`} 
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 className="text-white/90 hover:text-white transition-colors font-bold text-lg"
               >
                 {item}
@@ -91,15 +83,16 @@ export default function Header() {
         </div>
 
         {/* MOBILE NAVIGATION MENU */}
-        <div className={`
-          md:hidden overflow-hidden transition-all duration-300 ease-in-out
-          ${isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"}
-        `}>
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
+          }`}
+        >
           <div className="bg-blue-950/95 backdrop-blur-md rounded-2xl p-6 space-y-3 border border-white/10 shadow-xl">
             {["Home", "About Us", "Courses", "Services"].map((item) => (
-              <Link 
+              <Link
                 key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`} 
+                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
                 className="block text-white/90 px-4 py-4 hover:bg-white/10 rounded-xl transition-colors font-bold text-xl"
                 onClick={closeMenu}
               >
