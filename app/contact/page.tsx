@@ -42,7 +42,7 @@ export default function ContactPage() {
 
       <main>
         {/* HERO SECTION */}
-         <section className="bg-[#5F73A7] py-5 sm:py-24">
+         <section className="bg-[#5F73A7] py-5 sm:py-30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               Contact Varnawin Softech

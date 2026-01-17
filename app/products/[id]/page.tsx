@@ -27,7 +27,26 @@ export default function ProductDetailPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gray-50 py-12">
+<main>
+        {/* HERO */}
+     {/* HERO */}
+<section className="bg-[#5F73A7] pt-16 pb-10 sm:pt-20 sm:pb-12">
+  <div className="max-w-7xl mx-auto px-3 text-center sm:text-left">
+
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+      Courses
+    </h1>
+
+    <p className="text-base sm:text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed">
+      Industry-focused IT and professional training programs from
+      <strong> Varnawin Softech</strong>, designed for students, freshers,
+      and working professionals.
+    </p>
+
+  </div>
+</section>
+
+
         <div className="max-w-5xl mx-auto px-4">
           <Link href="/courses" className="text-[#5F73A7] font-medium hover:underline mb-8 inline-block">
             ← Back to All Courses
