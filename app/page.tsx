@@ -72,12 +72,12 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="overflow-x-hidden">
+     <main className="overflow-x-hidden">
         {/* HERO */}
         <HeroSlider />
 
         {/* COMPANY INTRO */}
-        <section className="py-16 sm:py-24">
+         <section className="py-5 sm:py-20">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-blue-900">
               Varnawin Softech – Training & Consulting Services
@@ -99,7 +99,7 @@ export default function Home() {
         </section>
 
         {/* WHY CHOOSE US */}
-       <section className="py-16 sm:py-24">
+      <section className="py-20 sm:py-5">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">
               Why Choose Varnawin Softech?
@@ -145,7 +145,7 @@ export default function Home() {
         </section>
 
         {/* SERVICES */}
-        <section className="py-16 sm:py-24">
+         <section className="py-5 sm:py-5">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">
               Our Training & Consulting Services
@@ -172,7 +172,7 @@ export default function Home() {
         </section>
 
         {/* TRAINING DOMAINS */}
-         <section className="py-16 sm:py-24">
+         <section className="py-5 sm:py-5">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl font-bold mb-10 text-blue-900 text-center">
               Training Domains & Courses
@@ -213,7 +213,7 @@ export default function Home() {
         </section>
 
         {/* TRAINING METHODOLOGY */}
-         <section className="py-16 sm:py-24">
+        <section className="py-5 sm:py-5">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8 text-blue-900">
               Our Training Methodology
@@ -237,7 +237,7 @@ export default function Home() {
         </section>
 
         {/* VISION & MISSION */}
-        <section className="py-16 sm:py-24">
+         <section className="py-5 sm:py-5">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-blue-900">
               Our Mission & Vision
@@ -275,7 +275,7 @@ export default function Home() {
 
 ;
 
-<section className="py-16 sm:py-24">
+ <section className="py-5 sm:py-5">
   <div className="max-w-5xl mx-auto px-4">
     <div className="bg-[#6B7FB3] rounded-2xl px-8 py-14 text-center shadow-xl">
 

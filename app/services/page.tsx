@@ -16,7 +16,7 @@ export default function Services() {
 
       <main>
         {/* Hero Section */}
-       <section className="bg-[#5F73A7] py-16 sm:py-24">
+       <section className="bg-[#5F73A7] py-5 sm:py-5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               Our Services
@@ -29,7 +29,7 @@ export default function Services() {
         </section>
 
         {/* Services Section */}
-        <section className="py-16 sm:py-24 bg-white">
+        <section className="py-5 sm:py-5 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-blue-900">
               What We Offer
@@ -89,7 +89,7 @@ export default function Services() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 sm:py-24 bg-slate-50">
+        <section className="py-16 sm:py-5 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-blue-900">
               Why Choose Varnawin Softech?
@@ -114,7 +114,7 @@ export default function Services() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 sm:py-24">
+        <section className="py-16 sm:py-5">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-blue-900">
               Ready to Get Started?

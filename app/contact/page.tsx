@@ -42,7 +42,7 @@ export default function ContactPage() {
 
       <main>
         {/* HERO SECTION */}
-         <section className="bg-[#5F73A7] py-16 sm:py-24">
+         <section className="bg-[#5F73A7] py-5 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               Contact Varnawin Softech
@@ -56,7 +56,7 @@ export default function ContactPage() {
         </section>
 
         {/* CONTACT DETAILS + FORM */}
-        <section className="py-16 sm:py-24 bg-slate-50">
+        <section className="py-16 sm:py-5 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               {/* CONTACT INFO */}
@@ -217,7 +217,7 @@ export default function ContactPage() {
         </section>
 
         {/* GOOGLE MAP */}
-        <section className="py-16 sm:py-24 bg-slate-50">
+        <section className="py-16 sm:py-5 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-blue-900">
               Visit Our Training Institute
