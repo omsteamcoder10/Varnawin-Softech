@@ -8,11 +8,14 @@ import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  name: "",
+  email: "",
+  whatsapp: "",
+  contact: "",
+  course: "",
+  trainingType: "",
+});
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,19 +25,36 @@ export default function ContactPage() {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const whatsappMessage = `Hello Varnawin Softech,%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AEnquiry: ${formData.message}`;
+  const whatsappNumber = "919003254387";
 
-    const whatsappNumber = "919003254387";
+  const message = `*New Course Enquiry - Varnawin Softech*
 
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
-      "_blank"
-    );
+Name: ${formData.name}
+Email: ${formData.email}
+WhatsApp: ${formData.whatsapp}
+Contact: ${formData.contact}
+Course: ${formData.course}
+Training Type: ${formData.trainingType}
+`;
 
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  window.open(whatsappURL, "_blank");
+
+  // Reset form
+  setFormData({
+    name: "",
+    email: "",
+    whatsapp: "",
+    contact: "",
+    course: "",
+    trainingType: "",
+  });
+};
 
   return (
     <>
@@ -90,12 +110,11 @@ export default function ContactPage() {
                     <p className="text-blue-900/70 font-medium">
                       +91 9003254387
                     </p>
-                    <p className="text-blue-900/70 font-medium">
-                      +91 9500688030
-                    </p>
-                    <p className="text-sm text-blue-900/60">
-                      Mon – Sat | 9:00 AM – 7:00 PM
-                    </p>
+                    
+                  <p className="text-sm text-blue-900/60">
+  Mon – Sat | 9:00 AM – 7:00 PM <span className="mx-1">→</span> Mon – Sun | 9:00 AM – 9:00 PM
+</p>
+
                   </div>
                 </div>
 
@@ -136,82 +155,129 @@ export default function ContactPage() {
 
               {/* CONTACT FORM */}
               <div className="lg:col-span-2">
-                <div className="bg-white rounded-xl p-8 border border-blue-900/20 shadow-md">
-                  <h2 className="text-2xl font-bold mb-6 text-blue-900">
-                    Send Us Your Enquiry
-                  </h2>
+  <div className="bg-white rounded-xl p-8 border border-blue-900/20 shadow-md">
+    <h2 className="text-2xl font-bold mb-6 text-blue-900">
+      Send Us Your Enquiry
+    </h2>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-blue-900 mb-2">
-                          Full Name
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
-                          placeholder="Your name"
-                        />
-                      </div>
+    <form onSubmit={handleSubmit} className="space-y-6">
 
-                      <div>
-                        <label className="block text-sm font-medium text-blue-900 mb-2">
-                          Email Address
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
+      {/* Name & Email */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-medium text-blue-900 mb-2">
+            Name *
+          </label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
+            placeholder="Your full name"
+          />
+        </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-blue-900 mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
-                        placeholder="+91 XXXXX XXXXX"
-                      />
-                    </div>
+        <div>
+          <label className="block text-sm font-medium text-blue-900 mb-2">
+            Email ID *
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
+            placeholder="your@email.com"
+          />
+        </div>
+      </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-blue-900 mb-2">
-                        Message
-                      </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={5}
-                        className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
-                        placeholder="Tell us which course or service you are interested in"
-                      />
-                    </div>
+      {/* WhatsApp & Contact */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-medium text-blue-900 mb-2">
+            WhatsApp Number *
+          </label>
+          <input
+            type="tel"
+            name="whatsapp"
+            value={formData.whatsapp}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
+            placeholder="+91 XXXXX XXXXX"
+          />
+        </div>
 
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-900 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 hover:shadow-lg transition-all"
-                    >
-                      Send Enquiry via WhatsApp
-                    </button>
-                  </form>
-                </div>
-              </div>
+        <div>
+          <label className="block text-sm font-medium text-blue-900 mb-2">
+            Contact Number *
+          </label>
+          <input
+            type="tel"
+            name="contact"
+            value={formData.contact}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
+            placeholder="+91 XXXXX XXXXX"
+          />
+        </div>
+      </div>
+
+      {/* Course Name */}
+      <div>
+        <label className="block text-sm font-medium text-blue-900 mb-2">
+          Course Name *
+        </label>
+        <input
+          type="text"
+          name="course"
+          value={formData.course}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
+          placeholder="Eg: Full Stack Development"
+        />
+      </div>
+
+      {/* Training Type Dropdown */}
+      <div>
+        <label className="block text-sm font-medium text-blue-900 mb-2">
+          Training Type *
+        </label>
+        <select
+          name="trainingType"
+          value={formData.trainingType}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-2 rounded-lg border border-blue-900/30 focus:ring-2 focus:ring-blue-900"
+        >
+          <option value="">Select Training Type</option>
+          <option value="Individual Online">Individual Online</option>
+          <option value="Individual Offline">Individual Offline</option>
+          <option value="Corporate Training">Corporate Training</option>
+          <option value="College Training">College Training</option>
+          <option value="Internship">Internship</option>
+        </select>
+      </div>
+
+      {/* Submit */}
+      <button
+        type="submit"
+        className="w-full bg-blue-900 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 hover:shadow-lg transition-all"
+      >
+        Send Enquiry via WhatsApp
+      </button>
+
+    </form>
+  </div>
+</div>
+
+              
             </div>
           </div>
         </section>
@@ -225,7 +291,7 @@ export default function ContactPage() {
 
             <div className="rounded-xl overflow-hidden shadow-lg h-96 border border-blue-900/20">
               <iframe
-                src="https://www.google.com/maps?q=38/211+Bharathipuram+2nd+Street+Dindigul&output=embed"
+                src={`${process.env.NEXT_PUBLIC_MAP_URL}`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

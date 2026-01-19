@@ -34,14 +34,15 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header
+   <header
   className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
     scrolled
-      ? "bg-[#5F73A7]/95 backdrop-blur-sm shadow-lg"
+      ? "bg-[#0A1F44]/95 backdrop-blur-sm shadow-lg"
       : "bg-transparent"
   }`}
 >
-  <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+  <nav className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
     <div className="flex justify-between items-center h-24">
 
           {/* LOGO */}
@@ -49,7 +50,7 @@ export default function Header() {
             <img
               src="/logo/1.webp"
               alt="Mirror Homes Logo"
-              className="h-30 md:h-43 object-contain"
+              className="h-50 md:h-53 object-contain  mt-7"
             />
           </Link>
 
@@ -93,7 +94,7 @@ export default function Header() {
             isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="bg-blue-950/95 backdrop-blur-md rounded-2xl p-6 space-y-3 shadow-xl">
+<div className="bg-[#0A1F44]/95 backdrop-blur-md rounded-2xl p-6 space-y-3 shadow-xl">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

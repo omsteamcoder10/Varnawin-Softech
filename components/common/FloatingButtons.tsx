@@ -19,15 +19,16 @@ export default function FloatingButtons() {
   }
 
   const openWhatsApp = () => {
-    window.open(
-      "https://wa.me/919551388000?text=Hi Mercury Traders! I need information about your scrap buying services.",
-      "_blank",
-    )
-  }
+  window.open(
+    "https://wa.me/919003254387?text=Hi Mercury Traders! I need information about your scrap buying services.",
+    "_blank"
+  )
+}
 
-  const makeCall = () => {
-    window.open("tel:+919551388000", "_self")
-  }
+const makeCall = () => {
+  window.open("tel:+919003254387", "_self")
+}
+
 
   return (
     <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">

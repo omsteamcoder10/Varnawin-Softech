@@ -147,6 +147,14 @@ export default function CoursesPage() {
         "Industry-oriented internships, live projects, and expert mentoring support.",
       image: "/courses/20.webp",
     },
+    {
+  id: "21",
+  name: "Database Course",
+  description:
+    "SQL, MySQL, PostgreSQL, Oracle database concepts with hands-on practice.",
+  image: "/courses/21.webp",
+}
+
   ];
 
   return (
@@ -157,30 +165,33 @@ export default function CoursesPage() {
         {/* HERO SECTION */}
         <section className="bg-[#5F73A7] py-16 sm:py-30">
           <div className="max-w-7xl mx-auto px-4">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              IT & Professional Training Courses
-            </h1>
-            <p className="text-lg text-white/80 max-w-3xl">
-              Explore industry-aligned, job-oriented training programs from
-              <strong> Varnawin Softech</strong>, a trusted IT training institute
-              and corporate training provider in India.
-            </p>
+            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
+  IT & Professional Training Courses
+</h1>
+
+<p className="text-xl sm:text-2xl text-white/90 max-w-4xl">
+  Explore industry-aligned, job-oriented training programs from
+  <strong> Varnawin Softech</strong>, a trusted IT training institute
+  and corporate training provider in India.
+</p>
+
           </div>
         </section>
 
         {/* COURSES GRID */}
         <section className="py-16 sm:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#2f3e6f]">
-              All Training Programs
-            </h2>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-[#2f3e6f]">
+  All Training Programs
+</h2>
 
-            <p className="text-lg text-gray-600 mb-12 max-w-4xl">
-              Our courses are designed for students, freshers, and working professionals
-              seeking <strong>practical skills, certifications, and placement-oriented learning</strong>.
-              Every program includes hands-on labs, live projects, assessments, and
-              post-training support to ensure real-world readiness.
-            </p>
+<p className="text-xl sm:text-2xl text-gray-700 mb-14 max-w-5xl leading-relaxed">
+  Our courses are designed for students, freshers, and working professionals
+  seeking <strong>practical skills, certifications, and placement-oriented learning</strong>.
+  Every program includes hands-on labs, live projects, assessments, and
+  post-training support to ensure real-world readiness.
+</p>
+
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {allProducts.map((product) => (
@@ -189,12 +200,13 @@ export default function CoursesPage() {
             </div>
 
             {/* SEO FOOTER CONTENT */}
-            <p className="mt-16 text-sm text-gray-500 max-w-4xl">
-              Varnawin Softech is a leading software training company offering
-              the best IT courses in India, including full stack development,
-              data science, cloud computing, cyber security, digital marketing,
-              and professional skill development programs.
-            </p>
+            <p className="mt-20 text-lg sm:text-xl text-gray-600 max-w-5xl leading-relaxed">
+  <strong>Varnawin Softech</strong> is a leading software training company offering
+  the best IT courses in India, including full stack development,
+  data science, cloud computing, cyber security, digital marketing,
+  and professional skill development programs.
+</p>
+
           </div>
         </section>
       </main>

@@ -36,4 +36,14 @@ export const allProducts: Course[] = [
   { id: "18", name: "Communication & Presentation Skills", description: "Professional communication, presentation skills, and workplace confidence building.", image: "/courses/18.webp" },
   { id: "19", name: "Career Readiness & Interview Skills", description: "Resume building, interview preparation, and career readiness training.", image: "/courses/19.webp" },
   { id: "20", name: "Internship & Project Mentoring Program", description: "Industry-oriented internships, live projects, and expert mentoring support.", image: "/courses/20.webp" },
+  {
+  id: "21",
+  name: "Database Course",
+  description:
+    "SQL, MySQL, PostgreSQL, Oracle concepts with hands-on queries, optimization, and real-time use cases.",
+  image: "/courses/21.webp",
+  duration: "3 Months",
+  level: "Beginner to Intermediate",
+}
+
 ];

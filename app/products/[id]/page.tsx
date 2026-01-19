@@ -30,7 +30,7 @@ export default function ProductDetailPage() {
 <main>
         {/* HERO */}
      {/* HERO */}
-<section className="bg-[#5F73A7] pt-16 pb-10 sm:pt-20 sm:pb-12">
+<section className="pl-0 sm:pl-18 bg-[#5F73A7] pt-20 pb-10 sm:pt-24 sm:pb-12">
   <div className="max-w-7xl mx-auto px-3 text-center sm:text-left">
 
     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
@@ -47,7 +47,7 @@ export default function ProductDetailPage() {
 </section>
 
 
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4">
           <Link href="/courses" className="text-[#5F73A7] font-medium hover:underline mb-8 inline-block">
             ← Back to All Courses
           </Link>

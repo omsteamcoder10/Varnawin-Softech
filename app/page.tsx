@@ -8,7 +8,8 @@ import HeroSlider from "@/components/HeroSlider";
 import ProductCard from "@/components/ProductCard";
 import FloatingButtons from "@/components/common/FloatingButtons";
 import ScrollToTop from "@/components/common/ScrollToTop";
-
+import ReviewsAndLogos from "@/components/home/ReviewsAndLogos";
+import ClientsLogos from "@/components/ClientsLogos";
 import {
   ArrowRight,
   Code,
@@ -78,25 +79,28 @@ export default function Home() {
 
         {/* COMPANY INTRO */}
          <section className="py-5 sm:py-20">
-          <div className="max-w-6xl mx-auto px-4 text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-blue-900">
-              Varnawin Softech – Training & Consulting Services
-            </h1>
-            <p className="text-lg text-blue-900/80 leading-relaxed">
-              Varnawin Softech is a leading <strong>training and consulting company in India</strong>,
-              delivering industry-focused, job-oriented training solutions for corporates,
-              professionals, students, and educational institutions.
-            </p>
-            <p className="mt-4 text-blue-900/70">
-              We specialize in IT training, corporate upskilling, technology consulting,
-              and career-focused learning programs aligned with real-world business needs.
-               Our trainers bring real-time industry experience, ensuring learners gain
+  <div className="max-w-6xl mx-auto px-4 text-center">
+    <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-blue-900">
+      Varnawin Softech – Training & Consulting Services
+    </h1>
+
+    <p className="text-lg sm:text-xl text-blue-900/80 leading-relaxed">
+      Varnawin Softech is a leading <strong>training and consulting company in India</strong>,
+      delivering industry-focused, job-oriented training solutions for corporates,
+      professionals, students, and educational institutions.
+    </p>
+
+    <p className="mt-4 text-lg sm:text-xl md:text-2xl text-blue-900/80 leading-relaxed">
+      We specialize in IT training, corporate upskilling, technology consulting,
+      and career-focused learning programs aligned with real-world business needs.
+      Our trainers bring real-time industry experience, ensuring learners gain
       skills that are relevant, current, and in demand. With a strong focus on
       practical learning, skill development, and workforce productivity, we help
       organizations and professionals achieve measurable outcomes.
-            </p>
-          </div>
-        </section>
+    </p>
+  </div>
+</section>
+
 
         {/* WHY CHOOSE US */}
       <section className="py-20 sm:py-5">
@@ -174,27 +178,30 @@ export default function Home() {
         {/* TRAINING DOMAINS */}
          <section className="py-5 sm:py-5">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-10 text-blue-900 text-center">
-              Training Domains & Courses
-            </h2>
+           <h2 className="text-3xl font-bold mb-10 text-blue-900 text-center">
+  Practical, Industry-Driven Courses for Today’s Competitive Careers.
+</h2>
 
-            <DomainList
-              title="IT Training Domains"
-              items={[
-                "Full Stack Development (Java / .NET / Python)",
-                "Data Analytics & Business Intelligence",
-                "Data Science & Machine Learning",
-                "Artificial Intelligence & Generative AI",
-                "Cloud Computing (AWS, Azure, GCP)",
-                "DevOps & DevSecOps",
-                "Cyber Security & SOC Analyst",
-                "Software Testing (Manual, Automation, API, Performance, ETL, Mobile)",
-                "RPA & Intelligent Automation",
-                "Microsoft Power Platform & M365",
-                "Web & UI/UX Development",
-                "Mobile App Development",
-              ]}
-            />
+
+           <DomainList
+  title="IT Training Domains"
+  items={[
+    "Full Stack Development (Java / .NET / Python)",
+    "Data Analytics & Business Intelligence",
+    "Data Science & Machine Learning",
+    "Artificial Intelligence & Generative AI",
+    "Cloud Computing (AWS, Azure, GCP)",
+    "DevOps & DevSecOps",
+    "Cyber Security & SOC Analyst",
+    "Software Testing (Manual, Automation, API, Performance, ETL, Mobile)",
+    "RPA & Intelligent Automation",
+    "Microsoft Power Platform & M365",
+    "Web & UI/UX Development",
+    "Mobile App Development",
+    "Databases (MySQL, PostgreSQL, Oracle, MongoDB)" // ✅ ADD THIS
+  ]}
+/>
+
 
             <DomainList
               title="Non-IT & Professional Skills"
@@ -235,41 +242,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* VISION & MISSION */}
-         <section className="py-5 sm:py-5">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-blue-900">
-              Our Mission & Vision
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="bg-white rounded-xl p-8 border border-blue-900/20 shadow-md hover:shadow-lg transition-all">
-                <Target className="w-12 h-12 text-blue-900 mb-4" />
-                <h3 className="text-2xl font-bold mb-4 text-blue-900">
-                  Our Mission
-                </h3>
-                <p className="text-blue-900/80 leading-relaxed">
-                  To deliver high-quality, job-oriented training and consulting
-                  services that create measurable value for learners and
-                  organizations through practical, industry-aligned programs.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 border border-blue-900/20 shadow-md hover:shadow-lg transition-all">
-                <Award className="w-12 h-12 text-blue-900 mb-4" />
-                <h3 className="text-2xl font-bold mb-4 text-blue-900">
-                  Our Vision
-                </h3>
-                <p className="text-blue-900/80 leading-relaxed">
-                  To be a globally trusted training and consulting company,
-                  enabling digital skills, workforce transformation, and
-                  long-term career success.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <ClientsLogos />
+      <ReviewsAndLogos />
         {/* CONTACT CTA */}
         ;
 
