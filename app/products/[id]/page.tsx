@@ -70,12 +70,14 @@ export default function ProductDetailPage() {
                 </p>
 
                 <div className="flex flex-col gap-4 sm:flex-row md:flex-col lg:flex-row">
-                  <button className="flex-1 bg-[#2f3e6f] text-white py-4 rounded-lg font-semibold hover:bg-[#5F73A7] transition-all">
-                    Enroll Now
-                  </button>
-                  <button className="flex-1 border-2 border-[#2f3e6f] text-[#2f3e6f] py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all">
+                 <Link href="/contact" className="flex-1">
+  <button className="w-full bg-[#2f3e6f] text-white py-4 rounded-lg font-semibold hover:bg-[#5F73A7] transition-all">
+    Enroll Now
+  </button>
+</Link>
+                  {/* <button className="flex-1 border-2 border-[#2f3e6f] text-[#2f3e6f] py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all">
                     Get Syllabus
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
