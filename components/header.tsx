@@ -89,32 +89,56 @@ export default function Header() {
         </div>
 
         {/* MOBILE MENU */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
-          }`}
-        >
-<div className="bg-[#0A1F44]/95 backdrop-blur-md rounded-2xl p-6 space-y-3 shadow-xl">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="block text-white px-4 py-4 hover:bg-white/10 rounded-xl font-bold text-xl"
-              >
-                {link.label}
-              </Link>
-            ))}
+        {/* AMAZON STYLE MOBILE MENU – RIGHT SIDE */}
+<div
+  className={`md:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
+    isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+  }`}
+>
+  {/* LEFT SIDE BACKDROP */}
+  <div
+    className="absolute inset-0 bg-black/60"
+    onClick={closeMenu}
+  />
 
-            <Link
-              href="/contact"
-              onClick={closeMenu}
-              className="block bg-blue-600 text-white px-4 py-4 rounded-xl text-center font-bold text-xl"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
+  {/* RIGHT HALF MENU */}
+  <div
+    className={`absolute top-0 right-0 h-full w-1/2
+    bg-[#2b2b2b] transition-transform duration-300 ease-out
+    ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+  >
+    {/* HEADER */}
+    <div className="flex items-center justify-between px-4 h-16 border-b border-white/10">
+      <span className="text-white font-semibold text-lg">Menu</span>
+      <button onClick={closeMenu} className="text-white text-2xl">
+        ✕
+      </button>
+    </div>
+
+    {/* MENU ITEMS */}
+    <div className="px-4 py-4 space-y-3">
+      {navLinks.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          onClick={closeMenu}
+          className="block text-white text-lg font-medium py-3 border-b border-white/10"
+        >
+          {link.label}
+        </Link>
+      ))}
+
+      <Link
+        href="/contact"
+        onClick={closeMenu}
+        className="block text-white text-lg font-medium py-3 border-b border-white/10"
+      >
+        Contact Us
+      </Link>
+    </div>
+  </div>
+</div>
+
       </nav>
     </header>
   );

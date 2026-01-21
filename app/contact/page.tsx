@@ -62,7 +62,7 @@ Training Type: ${formData.trainingType}
 
       <main>
         {/* HERO SECTION */}
-         <section className="bg-[#5F73A7] py-5 sm:py-30">
+         <section className="bg-[#5F73A7] py-30 sm:py-30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               Contact Varnawin Softech
@@ -112,7 +112,7 @@ Training Type: ${formData.trainingType}
                     </p>
                     
                   <p className="text-sm text-blue-900/60">
-  Mon – Sat | 9:00 AM – 7:00 PM <span className="mx-1">→</span> Mon – Sun | 9:00 AM – 9:00 PM
+   <span className="mx-1"></span> Mon – Sun | 9:00 AM – 9:00 PM
 </p>
 
                   </div>
